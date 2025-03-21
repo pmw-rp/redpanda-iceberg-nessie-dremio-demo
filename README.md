@@ -73,7 +73,7 @@ helm install -n nessie local oci://registry-1.docker.io/bitnamicharts/postgresql
 ### Create the Nessie Database and User
 ```zsh
 export POSTGRES_PASSWORD=$(kubectl get secret --namespace nessie local-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d)
-cat create-nessie-db.sql | kubectl exec -it local-postgresql-0 -n nessie -- /opt/bitnami/scripts/postgresql/entrypoint.sh /bin/bash -c "psql postgresql://postgres:${POSTGRES_PASSWORD}@local-postgresql/postgres"
+cat resources/create-nessie-db.sql | kubectl exec -it local-postgresql-0 -n nessie -- /opt/bitnami/scripts/postgresql/entrypoint.sh /bin/bash -c "psql postgresql://postgres:${POSTGRES_PASSWORD}@local-postgresql/postgres"
 
 cat << EOF > nessie-db-creds
 postgres_username=nessie

@@ -1,0 +1,4 @@
+{"tenant": "foo", "day": "2025-03-20", "hour": "08", "type": "message", "value": "example 1"}
+{"tenant": "foo", "day": "2025-03-19", "hour": "08", "type": "message", "value": "example 2"}
+{"tenant": "foo", "day": "2025-03-19", "hour": "09", "type": "message", "value": "example 3"}
+{"tenant": "bar", "day": "2025-03-20", "hour": "08", "type": "message", "value": "example 4"}

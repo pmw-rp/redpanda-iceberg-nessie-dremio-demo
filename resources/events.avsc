@@ -1,0 +1,26 @@
+{
+  "type": "record",
+  "name": "event",
+  "fields": [
+    {
+      "name": "tenant",
+      "type": "string"
+    },
+    {
+      "name": "day",
+      "type": "string"
+    },
+    {
+      "name": "hour",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "type": "string"
+    }
+  ]
+}

@@ -53,7 +53,7 @@ Minio should now be up and running at http://local-minio.minio.svc.cluster.local
 
 Next, configure the Minio CLI to have an alias, and use that to create the buckets we will need:
 ```zsh
-export MINIO_POD=$(kubectl get pods -n minio | tail -1 | awk '{print $1}')
+export MINIO_POD=$(kubectl get pods -n minio | grep -v console | tail -1 | awk '{print $1}')
 
 kubectl exec -n minio ${MINIO_POD} -- mc alias set local http://local-minio.minio.svc.cluster.local:9000 ${ROOT_USER} ${ROOT_PASSWORD}
 kubectl exec -n minio ${MINIO_POD} -- mc mb local/redpanda
